@@ -1,0 +1,4 @@
+select "ProductModelID" 
+	,"CultureID" 
+	,nullif ("CultureID",'zh-cht') as "NullCultureID"
+from "Production"."ProductModelProductDescriptionCulture" pmpdc 

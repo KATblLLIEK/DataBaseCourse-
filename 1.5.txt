@@ -1,0 +1,4 @@
+select "EmailAddressID" 
+	,"EmailAddress" 
+from "Person"."EmailAddress" ea 
+where "EmailAddress" ~ 'la'
