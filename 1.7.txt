@@ -1,0 +1,4 @@
+select "JobCandidateID" 
+	, coalesce  ("BusinessEntityID", '0') as "BusinessEntityID_0"
+	,"Resume" 
+from "HumanResources"."JobCandidate" jc 

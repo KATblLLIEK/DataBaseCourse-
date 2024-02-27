@@ -1,0 +1,7 @@
+select "WorkOrderID" 
+	,"ProductID" 
+	,"OrderQty" 
+	,"StockedQty" 
+	,"ScrappedQty" 
+	,"ScrapReasonID" 
+from "Production"."WorkOrder" wo 

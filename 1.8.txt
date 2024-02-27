@@ -1,0 +1,4 @@
+select "ProductID" 
+	,"Name" 
+	,coalesce ("Color", "Size", 'Unknown') as "Measurment"
+from "Production"."Product" p 

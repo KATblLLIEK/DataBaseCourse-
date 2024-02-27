@@ -1,0 +1,6 @@
+select "BusinessEntityID" 
+	,"TerritoryID" 
+	,"StartDate" 
+	,"EndDate" 
+from "Sales"."SalesTerritoryHistory" sth 
+where ("EndDate" between '2012-05-29' and '2012-11-29')

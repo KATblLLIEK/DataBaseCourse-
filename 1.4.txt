@@ -1,0 +1,4 @@
+select "BillOfMaterialsID" 
+	, "EndDate" 
+from "Production"."BillOfMaterials" bom2 
+where ("EndDate" notnull)

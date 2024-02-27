@@ -1,0 +1,5 @@
+select "CreditCardID" 
+	,"CardType" 
+	,"CardNumber" 
+from "Sales"."CreditCard" cc 
+order by "CardType" desc
