@@ -1,0 +1,6 @@
+select "Type" 
+	,"SpecialOfferID" 
+	,"Description" 
+	,"DiscountPct" 
+from "Sales"."SpecialOffer" so 
+where "Type"  in ('New Product', 'Discontinued Product')
