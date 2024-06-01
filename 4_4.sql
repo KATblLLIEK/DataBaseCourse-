@@ -3,11 +3,20 @@
 --("HumanResources"."Employee").
 
 
-with "employeecte" as (
-    select "e1"."BusinessEntityID", "e1"."JobTitle", 
-           row_number() over (order by "e1"."HireDate") as "rn"
-    from "HumanResources"."Employee" "e1"
-)
-select "e1"."JobTitle" as "CurrentJobTitle", "e2"."JobTitle" as "PreviousJobTitlee"
-from "employeecte" "e1"
-left join "employeecte" "e2" on "e1"."rn" = "e2"."rn" + 1;
+select 
+    e1."JobTitle" as "CurrentJobTitle",
+    e2."JobTitle" as "PreviousJobTitle"
+from 
+    "HumanResources"."Employee" e1
+left join 
+    "HumanResources"."Employee" e2
+on 
+    e1."HireDate" > e2."HireDate"
+left join 
+    "HumanResources"."Employee" e3
+on 
+    e2."HireDate" < e3."HireDate" and e1."HireDate" > e3."HireDate"
+where 
+    e3."BusinessEntityID" is null
+order by 
+    e1."HireDate";
