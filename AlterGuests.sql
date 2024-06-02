@@ -1,0 +1,31 @@
+ALTER TABLE "Guests"
+ADD CONSTRAINT "PK_Guests"
+PRIMARY KEY ("GuestID");
+
+ALTER TABLE "Guests"
+ALTER COLUMN "FirstName"
+SET NOT NULL;
+
+ALTER TABLE "Guests"
+ALTER COLUMN "LastName"
+SET NOT NULL;
+
+ALTER TABLE "Guests"
+ALTER COLUMN "DateOfBirth"
+SET NOT NULL;
+
+ALTER TABLE "Guests"
+ALTER COLUMN "PhoneNumber"
+SET NOT NULL;
+
+ALTER TABLE "Guests"
+ADD CONSTRAINT "CH_Guests_DateOfBirth"
+CHECK ("DateOfBirth" < CURRENT_DATE);
+
+ALTER TABLE "Guests"
+ADD CONSTRAINT "FK_Rooms_Guests"
+FOREIGN KEY ("RoomNumber") 
+REFERENCES "Rooms"("RoomNumber");
+
+ALTER TABLE "Guests"
+ALTER COLUMN "Discount" SET DEFAULT 0;
